@@ -22,6 +22,7 @@ class Provider extends AbstractProvider
      */
     protected function getAuthUrl($state)
     {
+        return \CloudCreativity\LaravelStripe\Facades\Stripe::authorizeUrl()->readWrite()->express();
         return $this->buildAuthUrlFromBase(
             'https://connect.stripe.com/oauth/authorize',
             $state
